@@ -60,5 +60,116 @@ echoarrayLeapYear::arrayIf($year);
 echo htmlTags::breakLine();
 }
 
+//public function __destruct()
+//{
+//print($this->html);
+//}
+}
+
+class stringFunctions
+{
+static public function stringReplace($src,$target,$str)
+{
+$str = str_replace($src,$target,$str);
+}
+static public function stringComapre($string1,$string2)
+{
+if($string1==$string2)
+{
+echo "Oops";
+}
+else if($string1<$string2)
+{
+return "future";
+}
+else if($string1<$string2)
+{
+return "past";
+}
+}
+static public function printPositions($date,$val)
+{
+return strpos($date,$val);
+//echo $pos1;
+}
+static public function stringWordcount($string1)
+{
+return str_word_count($string1);
+}
+static public function tringLength($string1)
+{
+return strlen($string1);
+}
+static public function stringASCII($string1)
+{
+return ord($string1);
+}
+static public function stringCharacter($string1,$value)
+{
+return substr($string1,$value);
+}
+static public function stringExplode($value,$string1)
+{
+$arr = explode($value.$string1);
+
+foreach($arr as $a)
+echo $a."\r";
+}
+}
+
+class arrayLeapYear
+{
+static public function arrayForeach($years)
+{
+foreach($years as $year)
+{
+arrayLeapYear::checkLeapYear($year);
+}
+}
+
+static public function arrayIf($years)
+{
+for($i=0; $i<count($years); $i++)
+{
+arrayLeapYear::checkLeapYear($Years[$i]);
+}
+}
+
+static public function checkLeapYear($year)
+{
+$val =(($year % 4 == 0) and ($year % 100 != 0) or ($year % 400 == 0));
+$str = '';
+switch ($val)
+{
+case 1:
+echo 'true'."\r";
+break;
+
+default:
+echo 'false'."\r";
+break;
+}
+}
+}
+ 
+class htmlTags
+{
+static public function horizontalRule()
+{
+return '<hr>';
+}
+static public function headingTwo($text)
+{
+return '<h2>'.$text.'</h2>';
+}
+static public function headingThree($text)
+{
+return '<h3>'.$text.'</h3>';
+}
+static public function breakLine()
+{
+return '<br>';
+}
+}
 
 ?>
